@@ -5,6 +5,9 @@
     xmlns="sap.m"
     displayBlock="true">
     <Page id="page" title="{i18n>title}">
+        <headerContent>
+            <Button icon="sap-icon://menu" press=".onCategorySelect" tooltip="{i18n>tooTipSelectCategory}"/>
+        </headerContent>
         <content>
             <IconTabBar id="iconTabBar" select=".onFestivalSelect" class="sapUiResponsiveContentPadding">
                 <items>
