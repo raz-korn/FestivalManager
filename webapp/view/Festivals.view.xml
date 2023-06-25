@@ -6,7 +6,18 @@
     displayBlock="true">
     <Page id="page" title="{i18n>title}">
         <content>
-            <IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
+            <IconTabBar id="iconTabBar" select=".onFestivalSelect" class="sapUiResponsiveContentPadding">
+                <items>
+                    <IconTabFilter
+                        showAll="true"
+                        text="{i18n>msgFilterAll}"
+                        key="All"
+                        count="{=${festivalModel>/festivals}.length}"/>
+                    <IconTabSeparator/>
+                    <IconTabFilter icon="sap-icon://lead" iconColor="Positive" text="max 50 Euro" key="Cheap"/>
+                    <IconTabFilter icon="sap-icon://money-bills" iconColor="Default" text="50 - 150 Euro" key="Moderate"/>
+                    <IconTabFilter icon="sap-icon://loan" iconColor="Critical" text="greater 150 Euro" key="Expensive"/>
+                </items>
                 <content>
                     <Table 
                         id="festivalsList"

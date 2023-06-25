@@ -4,6 +4,9 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import { IconColor } from "sap/ui/core/library";
+import ListBinding from "sap/ui/model/ListBinding";
+import Filter from "sap/ui/model/Filter";
+import Event from "sap/ui/base/Event";
 
 enum Threshold {
     Moderate = 50,
@@ -43,6 +46,27 @@ export default class Festivals extends Controller {
         } else {
             return IconColor.Critical;
         }
+    }
+
+    private customFilters: Filter[] = [];
+    private statusFilters: Filter[] = [];
+
+    onFestivalSelect(event: Event): void {
+
+        const listBinding = this.getView()?.byId("festivalsList")?.getBinding("items") as ListBinding;
+        const key = (event.getParameter("key") as string);
+
+        if (key === "Cheap") {
+            this.statusFilters = [new Filter("price", "LT", Threshold.Moderate, false)];
+        } else if (key === "Moderate") {
+            this.statusFilters = [new Filter("price", "BT", Threshold.Moderate, Threshold.Expensive)];
+        } else if (key === "Expensive") {
+            this.statusFilters = [new Filter("price", "GT", Threshold.Expensive, false)];
+        } else {
+            this.statusFilters = [];
+        }
+
+        listBinding.filter(this.statusFilters);
     }
 
 }
