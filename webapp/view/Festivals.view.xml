@@ -6,7 +6,28 @@
         <content>
             <IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
                 <content>
-                    <IllustratedMessage id="illustratedMessage" enableVerticalResponsiveness="true" illustrationType="sapIllus-EmptyList"/>
+                    <Table 
+                        id="festivalsList"
+                        items="{path: 'festivalModel>/festivals', sorter: {path:'category', group:true, descending:false}}"
+                        noDataText="No festivals">
+                        <columns>
+                            <Column>
+                                <header>
+                                    <Text text="Name"/>
+                                </header>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem >
+                                <cells>
+                                    <Text class="sapUiTinyMargin" text="{festivalModel>name}"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                        <noData>
+                            <IllustratedMessage id="illustratedMessage" enableVerticalResponsiveness="true" illustrationType="sapIllus-EmptyList"/>
+                        </noData>
+                    </Table>
                 </content>
             </IconTabBar>
         </content>

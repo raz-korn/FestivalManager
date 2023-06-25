@@ -16,7 +16,8 @@
             "toolsId": "4d7cd50a-de04-44fe-98c6-9e340ecb7621"
         },
         "dataSources": {
-            "festvalSource": {
+            "festivalSource": {
+                "type": "JSON",
                 "uri": "./localService/festivals.json"
             }
         }
