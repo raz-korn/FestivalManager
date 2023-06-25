@@ -1,0 +1,14 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
+                <content>
+                    <IllustratedMessage id="illustratedMessage" enableVerticalResponsiveness="true" illustrationType="sapIllus-EmptyList"/>
+                </content>
+            </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>

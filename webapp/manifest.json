@@ -35,16 +35,13 @@
     "sap.ui5": {
         "flexEnabled": true,
         "dependencies": {
-            "minUI5Version": "1.115.0",
+            "minUI5Version": "1.114.0",
             "libs": {
-                "sap.m": {},
                 "sap.ui.core": {},
+                "sap.ui.layout": {},
+                "sap.m": {},
                 "sap.f": {},
-                "sap.suite.ui.generic.template": {},
-                "sap.ui.comp": {},
-                "sap.ui.generic.app": {},
-                "sap.ui.table": {},
-                "sap.ushell": {}
+                "sap.suite.ui.microchart": {}
             }
         },
         "contentDensities": {
@@ -78,20 +75,20 @@
             },
             "routes": [
                 {
-                    "name": "RouteApp",
-                    "pattern": ":?query:",
+                    "name": "RouteFestivals",
+                    "pattern": "",
                     "target": [
-                        "TargetApp"
+                        "TargetFestivals"
                     ]
                 }
             ],
             "targets": {
-                "TargetApp": {
+                "TargetFestivals": {
                     "viewType": "XML",
                     "transition": "slide",
                     "clearControlAggregation": false,
-                    "viewId": "App",
-                    "viewName": "App"
+                    "viewId": "Festivals",
+                    "viewName": "Festivals"
                 }
             }
         },
